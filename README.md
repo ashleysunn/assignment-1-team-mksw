@@ -2,31 +2,17 @@
 ---
 ![](https://travis-ci.org/timtro/livecode-projectile.svg?branch=master)
 
-A simple implementation of an Euler integrator for projectile motion. This program was written (mostly) live, in lecture for SOFE-2850U in Fall 2017.
+A simple implementation of an Euler integrator for projectile motion. 
 
-Next week, we will add drag and stopping conditions. The drag will make the output more interesting. Implementing stopping conditions in a generic way force us to introduce lambdas and templates.
+### 1. 
 
-## Compilation
 
-Compile with
-```bash
-clang++ -std=c++14 -o projectile projectile.cpp
-```
-or
-```bash
-g++ -std=c++14 -o projectile projectile.cpp
-```
-and run as
-```bash
-./projectile
-```
-and watch your terminal fill with numbers.
+### 2. In the context of Question 1, how should the trajectory produced by the Verlet algorithm differ from the Euler integrator we used in the livecode?
 
-## Output
+The obvious difference between the Verlet integrator and Euler integrator would be that the latter is 2D, while the Verlet is in 3D. The Verlet algorithm has more stability than the Euler integrator, which is much simpler. Uniform update rate or the ability to accurately identify positions at a small time delta into the past, is what stability depends greatly on. Euler integration is fine for estimates and quick calculations but has many problems due to its errors, therefore it is good for an estimate for the trajectory. Since there are errors, it is not accurate, unlike the Verlet algorithm, which is more accurate resulting in a more accurate trajectory.  
 
-The output will be six columns of numbers with the following order:
-```
-time [s], x-position [m], y-position [m], x-speed [m/s], y-speed [m/s]
-```
-Plot the, you get the familiar parabolic trajectory, which will depend on your constants:  
-![](example.jpg)
+
+
+### 3. In livecode-projectile.hpp, we defined a type-constructor called VecR2 along with operators for addition and scalar multiplication. Does the VecR2 type constitute a vector space? If yes, prove it. If not, explain why not.
+
+A vector space is a set of values with two well-behaved operations; vector addition and scalar multiplication. For these operations, the term well-behaved means axioms, like closure under addition, associativity, commutativity, additive inverses, and identity. For VecR2 to be a vector space, it would need to follow all the axioms, but it does not. With operations of addition and scalar multiplication, it resembles a vector space but VecR2 does not constitute an actual vector space.
