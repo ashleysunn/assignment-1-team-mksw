@@ -44,6 +44,6 @@ void n_steps(unsigned n, TState state0) {
 }
 
 int main() {
-  n_steps(7000, TState{0., {((-Eo)/(w*w)*sqrt(2)),0,0}, {0, (Eo/(w*sqrt(2))),-0.25}});
+  n_steps(700, TState{0., {((-Eo)/(w*w)*sqrt(2)),0,0}, {0, (Eo/(w*sqrt(2))),-0.25}});
   return 0;
 }
