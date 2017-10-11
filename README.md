@@ -5,8 +5,8 @@
 A simple implementation of an Euler integrator for projectile motion. 
 
 ### 1. 
-/home/mahum/Pictures/verlet.png
-![](verlet.png)
+
+![](/home/mahum/Pictures/verlet.png)
 
 ### 2. In the context of Question 1, how should the trajectory produced by the Verlet algorithm differ from the Euler integrator we used in the livecode?
 
